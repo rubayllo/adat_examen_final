@@ -19,11 +19,11 @@ public class Producto {
     private String description;
 
     @NotNull
-    private Long price;
+    private Double price;
 
     @NotNull
     private String category;
 
     @NotNull
-    private Long stock;
+    private Integer stock;
 }

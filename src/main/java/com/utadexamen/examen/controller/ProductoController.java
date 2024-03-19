@@ -13,7 +13,7 @@ import java.util.Optional;
 // UrlBase = http://localhost:8080
 // ruta Url = /api/v1/ejemplo
 @RestController
-@RequestMapping(path = "api/v1/ejemplo")
+@RequestMapping(path = "api/v1/producto")
 public class ProductoController {
     private final ProductoService productService;
 

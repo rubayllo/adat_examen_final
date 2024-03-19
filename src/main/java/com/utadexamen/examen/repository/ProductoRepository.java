@@ -11,8 +11,6 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
 
     List<Producto> findByNameContainingIgnoreCase(String name);
 
-    List<Producto> findByNameContains(String name);
-
     List<Producto> findByStockEquals(Long stock);
 
 }

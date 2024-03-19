@@ -22,28 +22,11 @@ public class ProductoService {
         return productoRepository.findAll();
     }
 
-    public Producto getEjemploById(Long id){
-        return productoRepository.findById(id).orElse(null);
-    }
 
     public Producto addOrUpdateEjemplo(Producto ejemplo){
         return productoRepository.save(ejemplo);
     }
 
-    public void deleteEjemplo(Long id){
-        productoRepository.deleteById(id);
-    }
-
-
-
-    // Zona de Servicios creados en Repositorio
-//    public List<Producto> getEjemplosByCityContains(String str) {
-//            return productoRepository.findByCityContains(str);
-//    }
-
-    public List<Producto> getEjemplosByNameContains(String str) {
-        return productoRepository.findByNameContains(str);
-    }
 
 
     public List<Producto> getProductoByNames(String name) {
