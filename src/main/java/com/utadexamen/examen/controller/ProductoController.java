@@ -47,7 +47,7 @@ public class ProductoController {
 
 
     @GetMapping("/producto/{name}")
-    public ResponseEntity<List<Producto>> getByCity(@PathVariable String name) {
+    public ResponseEntity<List<Producto>> getByName(@PathVariable String name) {
         List<Producto> list = productService.getProductoByNames(name);
         return ResponseEntity.ok(list);
     }
@@ -58,12 +58,12 @@ public class ProductoController {
         // Verificar si el producto con el ID proporcionado existe en la base de datos
         Optional<Producto> optionalProduct = productService.getProductById(id);
         if (optionalProduct.isEmpty()) {
-            return ResponseEntity.notFound().build(); // Devolver 404 si el producto no existe
+            return ResponseEntity.notFound().build();
         }
 
         // Si el producto existe, eliminarlo de la base de datos
         productService.deleteProductById(id);
-        return ResponseEntity.noContent().build(); // Devolver 204 No Content si la eliminación fue exitosa
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/stock-zero")

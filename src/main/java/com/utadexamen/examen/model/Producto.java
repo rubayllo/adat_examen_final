@@ -25,5 +25,5 @@ public class Producto {
     private String category;
 
     @NotNull
-    private Integer stock;
+    private int stock;
 }

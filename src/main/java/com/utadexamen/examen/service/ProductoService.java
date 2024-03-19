@@ -44,6 +44,6 @@ public class ProductoService {
 
     public List<Producto> filterProductsWithZeroStock() {
         // Implementa la lógica para filtrar productos con stock igual a cero
-        return productoRepository.findByStockEquals(0L); // Suponiendo que estás usando Spring Data JPA
+        return productoRepository.findByStockEquals(0);
     }
 }
