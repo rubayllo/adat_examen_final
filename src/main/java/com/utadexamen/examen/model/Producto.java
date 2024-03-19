@@ -2,6 +2,7 @@ package com.utadexamen.examen.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.antlr.v4.runtime.misc.NotNull;
 
 @Data
 @Entity
@@ -10,10 +11,19 @@ public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String city;
-    private String country;
-    private Long population;
+
+    @NotNull
+    private String name;
+
+    @NotNull
+    private String description;
+
+    @NotNull
     private Long price;
+
+    @NotNull
     private String category;
+
+    @NotNull
     private Long stock;
 }
