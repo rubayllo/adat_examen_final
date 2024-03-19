@@ -55,16 +55,10 @@ public class ProductoController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProductById(@PathVariable Long id) {
-        // Verificar si el producto con el ID proporcionado existe en la base de datos
-        Optional<Producto> optionalProduct = productService.getProductById(id);
-        if (optionalProduct.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        // Si el producto existe, eliminarlo de la base de datos
         productService.deleteProductById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
+
 
     @GetMapping("/stock-zero")
     public ResponseEntity<List<Producto>> filterProductsWithZeroStock() {

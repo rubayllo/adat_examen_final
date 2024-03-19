@@ -18,6 +18,9 @@ public class ProductoService {
         this.productoRepository = ejemploRepository;
     }
 
+    public static void deleteProducto(Long idDestino) {
+    }
+
     public List<Producto> getEjemplos(){
         return productoRepository.findAll();
     }
@@ -38,7 +41,9 @@ public class ProductoService {
         return productoRepository.findById(id);
     }
 
-    public void deleteProductById(Long id) {
+
+    public void deleteProductById(Long id){
+        productoRepository.deleteById(id);
     }
 
 
