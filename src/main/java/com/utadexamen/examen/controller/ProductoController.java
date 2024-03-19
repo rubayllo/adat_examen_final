@@ -40,13 +40,13 @@ public class ProductoController {
         // Verificar si el producto con el ID proporcionado existe en la base de datos
         Optional<Producto> optionalProduct = productService.getProductById(id);
         if (optionalProduct.isEmpty()) {
-            return ResponseEntity.notFound().build(); // Devolver 404 si el producto no existe
+            return ResponseEntity.notFound().build();
         }
         return null;
     }
 
 
-    @GetMapping("/producto/{name}")
+    @GetMapping("/name/{name}")
     public ResponseEntity<List<Producto>> getByName(@PathVariable String name) {
         List<Producto> list = productService.getProductoByNames(name);
         return ResponseEntity.ok(list);
