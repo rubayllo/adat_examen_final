@@ -1,31 +1,31 @@
 package com.utadexamen.examen.service;
 
-import com.utadexamen.examen.model.Ejemplo;
-import com.utadexamen.examen.repository.EjemploRepository;
+import com.utadexamen.examen.model.Producto;
+import com.utadexamen.examen.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class EjemploService {
+public class ProductoService {
 
-    private final EjemploRepository ejemploRepository;
+    private final ProductoRepository ejemploRepository;
 
     @Autowired
-    public EjemploService(EjemploRepository ejemploRepository) {
+    public ProductoService(ProductoRepository ejemploRepository) {
         this.ejemploRepository = ejemploRepository;
     }
 
-    public List<Ejemplo> getEjemplos(){
+    public List<Producto> getEjemplos(){
         return ejemploRepository.findAll();
     }
 
-    public Ejemplo getEjemploById(Long id){
+    public Producto getEjemploById(Long id){
         return ejemploRepository.findById(id).orElse(null);
     }
 
-    public Ejemplo addOrUpdateEjemplo(Ejemplo ejemplo){
+    public Producto addOrUpdateEjemplo(Producto ejemplo){
         return ejemploRepository.save(ejemplo);
     }
 
@@ -36,15 +36,15 @@ public class EjemploService {
 
 
     // Zona de Servicios creados en Repositorio
-    public List<Ejemplo> getEjemplosByCityContains(String str) {
+    public List<Producto> getEjemplosByCityContains(String str) {
             return ejemploRepository.findByCityContains(str);
     }
 
-    public List<Ejemplo> getEjemplosByCity(String city){
+    public List<Producto> getEjemplosByCity(String city){
         return ejemploRepository.findByCityContainingIgnoreCase(city);
     }
 
-    public List<Ejemplo> getEjemplosByCountry(String country) {
+    public List<Producto> getEjemplosByCountry(String country) {
         return ejemploRepository.findByCountryContainingIgnoreCase(country);
     }
 }
